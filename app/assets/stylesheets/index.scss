@@ -1,15 +1,61 @@
-.table-responsive {
-  width: 50%;
-  margin-left: 25%;
-  margin-bottom: 25%;
+
+/* Body Background */
+body {
+  background: url("https://images6.alphacoders.com/410/410958.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.index {
+  margin-top: 5%;
 }
 
-thead {
-  background-color: #64692F;
+/* Container for the items */
+.list-container{
+  border: 1px solid white;
+  margin-top: 20px;
+  border-radius: 5px;
+  height: 250px;
+  background: blue;
+  background-color: rgba(13,40,76, 0.6);
+  display:inline-block;
+  width: 450px;
+}
+
+/* Image for item */
+.index-img {
+  width: 248px;
+  height:248px;
+  display: inline-block;
+  margin-left: -70px;
+}
+
+/* Item tags */
+.item-tags{
+  margin-top: 5%;
+  width: 40%;
+  height: 166px;
+  margin-left: -80px;
+}
+.tags li {
   color: white;
+  list-style-type: none;
+  font-size: 14px;
+  padding: 15px;
+  border: 1px solid white;
+  width: 190px;
+  margin-left: 120px;
+  margin-top: 10px;
 }
 
-img {
-  width: 100px;
-  height:100px;
+/* Align div's horizontally */
+/* Override bootstrap values */
+.row {
+  text-align: center;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.col-xs-12 {
+  width: 60%;
 }
