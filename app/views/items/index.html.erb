@@ -1,35 +1,47 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid index">
+  <div class="row">
 
-<h1>Listing Items</h1>
+      <h1 style="color: white;">Listing Items</h1>
+        <% @items.each do |item| %>
+          <div class="table-responsive list-container">
+            <div class="row">
+              <div class="col-sm-6">
+              <div class="section-content">
+              <div class="row">
+                <div class="item-img col-xs-12">
+                  <%= image_tag(item.image, class: "index-img") %>
+                </div>
+                <div class="item-tags col-xs-12">
+                  <ul class="tags">
+                    <li>Name                |           <%= item.name %></li>
+                    <li>Price               |           <%= item.price %></li>
+                    <li>Quantity            |           <%= item.quantity %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Quantity</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+            </div>
+          </div>
+        <% end %>
+          <!-- <tbody>
+            <% @items.each do |item| %>
+              <tr>
+                <td><%= item.name %></td>
+                <td><%= item.price %></td>
+                <td><%= item.quantity %></td>
+                <td><%= image_tag(item.image) %></td>
+                <td><%= link_to 'Show', item %></td>
+                <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+          </table> -->
+      </div>
+          <br />
+        <%= link_to 'New Item', new_item_path %>
 
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.name %></td>
-        <td><%= item.price %></td>
-        <td><%= item.description %></td>
-        <td><%= item.quantity %></td>
-        <td><%= image_tag(item.image) %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Item', new_item_path %>
+</div>
