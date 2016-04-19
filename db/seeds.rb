@@ -10,3 +10,9 @@ Item.create( name: "Freestanding Hourglass with Red Sand 60 Minute", price: "34.
 Item.create( name: "60 Minute Nautical Metal Sand Timer", price: "99.99" , description: "Functional and beautiful this sturdy hourglass is wonderful for both hourglass and nautical lovers!", quantity: "88", image: "nautical.jpg" )
 Item.create( name: "Bronzed 30 Minute Hourglass-Stand", price: "132.99" , description: "This 30 minute hourglass is a true collectors model that can be displayed as your desk accessory or table centerpiece in your home or office. Brass timer on sturdy, attractive wood stand. Colors are bronze and brown.", quantity: "6", image: "bronzed.jpg" )
 Item.create( name: "Old World Tuscan Hourglass", price: "84.99" , description: "Functional and beautiful this hourglass is unique and a great gift for hourglass collectors!", quantity: "100", image: "tuscan.jpg" )
+
+OrderStatus.delete_all
+OrderStatus.create! id: 1, name: "In Progress"
+OrderStatus.create! id: 2, name: "Placed"
+OrderStatus.create! id: 3, name: "Shipped"
+OrderStatus.create! id: 4, name: "Cancelled"
