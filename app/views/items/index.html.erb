@@ -1,21 +1,48 @@
+
 <p id="notice"><%= notice %></p>
+<div class="container-fluid index">
+  <div class="row">
 
-<table>
+      <h1 style="color: white;">Listing Items</h1>
+        <% @items.each do |item| %>
+          <div class="table-responsive list-container">
+            <div class="row">
+              <div class="col-sm-6">
+              <div class="section-content">
+              <div class="row">
+                <div class="item-img col-xs-12">
+                  <%= image_tag(item.image, class: "index-img") %>
+                </div>
+                <div class="item-tags col-xs-12">
+                  <ul class="tags">
+                    <li>Name                |           <%= item.name %></li>
+                    <li>Price               |           <%= item.price %></li>
+                    <li>Quantity            |           <%= item.quantity %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
+            </div>
+          </div>
+        <% end %>
+          <!-- <tbody>
+            <% @items.each do |item| %>
+              <tr>
+                <td><%= item.name %></td>
+                <td><%= item.price %></td>
+                <td><%= item.quantity %></td>
+                <td><%= image_tag(item.image) %></td>
+                <td><%= link_to 'Show', item %></td>
+                <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+          </table> -->
+      </div>
+          <br />
+        <%= link_to 'New Item', new_item_path %>
 
-  <tbody>
-
-    <h3 class="text-center">Products for Sale</h3>
-
-    <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-    <% @items.each do |item| %>
-      <%= render "product_row", item: item, image_tag: item.image, order_item: @order_item %>
-    <% end %>
-    </div>
-    </div>
-
-
-
-  </tbody>
-</table>
+</div>

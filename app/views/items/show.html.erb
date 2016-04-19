@@ -1,29 +1,22 @@
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+<table>
 
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
+  <tbody>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @item.quantity %>
-</p>
+    <h3 class="text-center">Products for Sale</h3>
 
-<p>
-  <strong>Image:</strong>
-  <%= @item.image %>
-</p>
+    <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+    <% @items.each do |item| %>
+      <%= render "product_row", item: item, image_tag: item.image, order_item: @order_item %>
+    <% end %>
+    </div>
+    </div>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+
+
+  </tbody>
+</table>
