@@ -25,6 +25,7 @@
 
             </div>
           </div>
+          <p><%= link_to 'Add to cart', shopping_cart_items_path(item_id: item.id, quantity: 1), method: :post %></p>
         <% end %>
           <!-- <tbody>
             <% @items.each do |item| %>
