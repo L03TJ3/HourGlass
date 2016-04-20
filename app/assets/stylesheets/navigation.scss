@@ -14,8 +14,9 @@ footer {
     background: #051E40;
     height: auto;
     padding-bottom: 30px;
-    position: relative;
+    position:static;
     width: 100%;
+
     border-bottom: 1px solid #CCCCCC;
     border-top: 1px solid #DDDDDD;
 }
@@ -136,6 +137,7 @@ footer {
 .payments {
     font-size: 1.5em;
 }
+
 form {
     padding-left: 30px;
     font-family: 'Muli', sans-serif;
@@ -143,10 +145,3 @@ form {
   .footer span {
     color: inherit;
   }
-#logo {
-  position:relative;
-  height:300px;
-  left:43%;
-  margin-top:10%;
-  border:5px;
-}
