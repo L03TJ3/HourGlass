@@ -2,12 +2,7 @@
 <img id='logo' src="http://res.cloudinary.com/codaisseur/image/upload/v1461074468/HORRIFY_uxwfml.png">
 </div>
 
-
-
-
-
-
-
+<!--Header-->
 <nav class="navbar navbar-inverse navbar-fixed-top navi" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -23,8 +18,8 @@
     <div id="navbar" class="collapse navbar-collapse">
       <div class = "pull-right">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Home", ""%></li>
-          <li><%= link_to "Contact", ""%></li>
+          <li><a href="http://localhost:3000/">Home</a></li>
+          <li><%= link_to "Contact", "" %></li>
           <% if user_signed_in? %>
             <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
           <% else %>
