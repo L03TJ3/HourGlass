@@ -1,8 +1,14 @@
-.background {
-  position:absolute;
-  width:100%;
 
-}
+#bg {
+  position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  }
+
 /* Body Background */
 body {
   -webkit-background-size: cover;
@@ -18,12 +24,12 @@ body {
 
 /* Container for the items */
 .list-container{
+  position:relative;
   border: 1px solid white;
   margin-top: 20px;
-  border-radius: 5px;
   height: 250px;
   background: #737374;
-  background-color: rgba(13,40,76, 0.6);
+  background-color: white 0.6;
   display:inline-block;
   width: 450px;
 }
@@ -69,7 +75,6 @@ body {
   width:250px;
   position:relative;
   margin-top: 75px;
-
 }
 
 .bglogo{
