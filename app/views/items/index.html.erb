@@ -34,6 +34,8 @@
             </div>
           </div>
           <p><%= link_to 'Add to cart', shopping_cart_items_path(item_id: item.id, quantity: 1), method: :post %></p>
+          <p><%= link_to 'Remove from cart', shopping_cart_item_path(item.id), method: :delete %></p>
+          <p><%= link_to 'Empty cart', empty_cart_path(item.id), method: :delete %></p>
         <% end %>
           <!-- <tbody>
             <% @items.each do |item| %>
