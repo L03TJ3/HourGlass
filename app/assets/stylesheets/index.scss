@@ -1,11 +1,15 @@
+.background {
+  position:absolute;
+  width:100%;
 
+}
 /* Body Background */
 body {
-  background: url("https://images6.alphacoders.com/410/410958.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 
 .index {
@@ -59,4 +63,19 @@ body {
 }
 .col-xs-12 {
   width: 60%;
+}
+
+#logo {
+  width:250px;
+  position:relative;
+  margin-top: 75px;
+
+}
+
+.bglogo{
+  width:100%;
+  background-color: white;
+  height:380px;
+  margin:0;
+  opacity:0.7;
 }

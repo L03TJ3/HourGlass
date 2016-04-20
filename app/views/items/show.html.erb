@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+
+
+
+
+
+<div ckass='showblock'>
 <p>
   <strong>Name:</strong>
   <%= @item.name %>
@@ -24,6 +30,7 @@
   <strong>Image:</strong>
   <%= @item.image %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
