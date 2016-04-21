@@ -1,4 +1,3 @@
-<img src="http://res.cloudinary.com/codaisseur/image/upload/v1461163575/hourglass_glass_book_63296_1920x1080_wpvu77.jpg" id="bg" alt="">
 <div class='bglogo'>
   <div class = "headerindex">
     <center><img id='logo' src="http://res.cloudinary.com/codaisseur/image/upload/v1461160604/HORRIFY_ujq3ya.png"></center>
@@ -7,52 +6,32 @@
 
 <p id="notice"><%= notice %></p>
 <div class="container-fluid index">
-  <div class="row">
 
-<br>
-      <h1 style="color: white;">Listing Items</h1>
-        <% @items.each do |item| %>
-          <div class="table-responsive list-container">
-            <div class="row">
-              <div class="col-sm-6">
-              <div class="section-content">
-              <div class="row">
-                <div class="item-img col-xs-12">
-                  <%= image_tag(item.image, class: "index-img") %>
-                </div>
-                <div class="item-tags col-xs-12">
-                  <ul class="tags">
-                    <li>Name                |           <%= item.name %></li>
-                    <li>Price               |           <%= item.price %></li>
-                    <li>Quantity            |           <%= item.quantity %></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-            </div>
-          </div>
-          <p><%= link_to 'Add to cart', shopping_cart_items_path(item_id: item.id, quantity: 1), method: :post %></p>
+<div class="welcome">
+  <h2 class="wel-head">
+    Welcome to Hourify <br  />
+    Below you can find our products
+  </h2>
+  <h4>(Click on a picture to go to a products page) </h4>
+</div>
+  <ul class="bxslider">
           <p><%= link_to 'Remove from cart', shopping_cart_item_path(item.id), method: :delete %></p>
           <p><%= link_to 'Empty cart', empty_cart_path(item.id), method: :delete %></p>
-        <% end %>
-          <!-- <tbody>
-            <% @items.each do |item| %>
-              <tr>
-                <td><%= item.name %></td>
-                <td><%= item.price %></td>
-                <td><%= item.quantity %></td>
-                <td><%= image_tag(item.image) %></td>
-                <td><%= link_to 'Show', item %></td>
-                <td><%= link_to 'Edit', edit_item_path(item) %></td>
-                <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
-          </table> -->
+  <% @items.each do |item| %>
+    <li>
+      <%= link_to image_tag(item.image, class: "index-img"), item_path(item.id) %>
+      <div class="test">
+        <div class="tag">Name:  <%= item.name %></div>
+        <div class="tag">Price:  $<%= item.price %></div>
+        <div class="tag">Quantity:  <%= item.quantity %></div>
+        <div class="atc_button"><p class="atc"><%= link_to 'Add to cart', shopping_cart_items_path(item_id: item.id, quantity: 1), method: :post %></p></div>
       </div>
-          <br />
-        <%= link_to 'New Item', new_item_path %>
+    </li>
+  <% end %>
+  </ul>
 
+  <p><%= link_to 'Add to cart', shopping_cart_items_path(item_id: item.id, quantity: 1), method: :post %></p>
+  <p><%= link_to 'Remove from cart', shopping_cart_item_path(item.id), method: :delete %></p>
+  <p><%= link_to 'Empty cart', empty_cart_path(item.id), method: :delete %></p>
+  <!-- <%= link_to 'New Item', new_item_path %> -->
 </div>
