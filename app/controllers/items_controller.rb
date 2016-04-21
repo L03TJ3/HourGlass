@@ -5,6 +5,10 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+
+    if params [:q].present?
+	@items = @items.where('title ILIKE ?' , " %#{params[:q]}% " )
+    end
   end
 
   # GET /items/1
