@@ -9,7 +9,17 @@
 <body>
 <%= render 'shared/navigation' %>
 <%= yield %>
+<<<<<<< HEAD
+
 <!-- <pre><%= session[:shopping_cart] %></pre> -->
+
+||||||| merged common ancestors
+
+<pre><%= session[:shopping_cart] %></pre>
+
+=======
+<pre><%= session[:shopping_cart] %></pre>
+>>>>>>> 08c58498315e6b6747b79d3e74e48c98186307ef
 </body>
 <footer>
 

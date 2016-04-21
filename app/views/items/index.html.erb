@@ -15,6 +15,8 @@
   <h4>(Click on a picture to go to a products page) </h4>
 </div>
   <ul class="bxslider">
+          <p><%= link_to 'Remove from cart', shopping_cart_item_path(item.id), method: :delete %></p>
+          <p><%= link_to 'Empty cart', empty_cart_path(item.id), method: :delete %></p>
   <% @items.each do |item| %>
     <li>
       <%= link_to image_tag(item.image, class: "index-img"), item_path(item.id) %>
@@ -27,5 +29,9 @@
     </li>
   <% end %>
   </ul>
+
+  <p><%= link_to 'Add to cart', shopping_cart_items_path(item_id: item.id, quantity: 1), method: :post %></p>
+  <p><%= link_to 'Remove from cart', shopping_cart_item_path(item.id), method: :delete %></p>
+  <p><%= link_to 'Empty cart', empty_cart_path(item.id), method: :delete %></p>
   <!-- <%= link_to 'New Item', new_item_path %> -->
 </div>
