@@ -1,3 +1,23 @@
-// Place all the styles related to the ShoppingCartItems controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.trigger {
+  height: 97px;
+  width: 107px;
+  background-color: blue;
+  margin-top: -690px;
+  margin-right: 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  position: fixed;
+}
+
+.trigger img {
+  width: 80px;
+  height: 60px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.cart-content {
+  width: 250px;
+  height: 500px;
+  margin-top: -690px;
+  background-color: yellow;
+}
