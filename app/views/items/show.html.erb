@@ -1,32 +1,19 @@
-<p id="notice"><%= notice %></p>
+<center>
+   <%= image_tag(@item.image, class:"imgitem")%>
 
 
+
+<br>
+  <div class='title_item'><%= @item.name %></div>
+<br>
+<br>
 <div class='showblock'>
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @item.quantity %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @item.image %>
-</p>
+  <div id='descript'><%= @item.description %></div>
+<br>
+<strong>PRICE:</strong>
+  <i><%= @item.price %></i>
 </div>
+</center>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
