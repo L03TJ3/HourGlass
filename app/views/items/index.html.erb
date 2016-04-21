@@ -44,12 +44,12 @@
 <!--  <%= session[:shopping_cart] %> -->
 
   <% session[:shopping_cart].each do |item_id, quantity| %>
-    <% i = session[:shopping_cart].length %>
-    name: <%= @items[i][:name] %>,
-    quantity: <%= quantity %>,
-    price: <%= @items[i][:price] %>
+    <%= item_id %>
+    <%= quantity %>
     <br />
-    <%= i %>
+
+    <%= link_to 'Remove from cart', shopping_cart_item_path(item_id), method: :delete %>
+    <br />
   <% end %>
 
 </div>
