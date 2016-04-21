@@ -5,10 +5,11 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @shopping_cart_items = session[:shopping_cart]
 
   #   if params [:q].present?
 	# @items = @items.where('title ILIKE ?' , " %#{params[:q]}% " )
-    # end
+  # end
   end
 
   # GET /items/1

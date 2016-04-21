@@ -41,5 +41,15 @@
 </div>
 
 <div class="cart-content">
-  
+<!--  <%= session[:shopping_cart] %> -->
+
+  <% session[:shopping_cart].each do |item_id, quantity| %>
+    <% i = session[:shopping_cart].length %>
+    name: <%= @items[i][:name] %>,
+    quantity: <%= quantity %>,
+    price: <%= @items[i][:price] %>
+    <br />
+    <%= i %>
+  <% end %>
+
 </div>
