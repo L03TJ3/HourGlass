@@ -1,8 +1,5 @@
 class ShoppingCartItemsController < ApplicationController
 
-  def index
-    @shopping_cart_items = session[:shopping_cart]
-  end
 
   def create
     session[:shopping_cart] ||= {}

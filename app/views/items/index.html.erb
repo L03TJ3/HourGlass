@@ -43,13 +43,18 @@
 <div class="cart-content">
 <!--  <%= session[:shopping_cart] %> -->
 
-  <% session[:shopping_cart].each do |item_id, quantity| %>
-    <%= item_id %>
-    <%= quantity %>
-    <br />
+  <% if session[:shopping_cart] != nil %>
+    <% session[:shopping_cart].each do |item_id, quantity| %>
+      <%= item_id %>
+      <%= quantity %>
+      <br />
 
-    <%= link_to 'Remove from cart', shopping_cart_item_path(item_id), method: :delete %>
-    <br />
+      <% item = Item.find(item_id.to_i) %>
+      <%= item.name %>
+      <%= item.price %>
+      <%= link_to 'Remove from cart', shopping_cart_item_path(item.id), method: :delete %>
+      <br />
+    <% end %>
+    <%= link_to 'Empty cart', empty_cart_path(1), method: :delete %>
   <% end %>
-
 </div>
