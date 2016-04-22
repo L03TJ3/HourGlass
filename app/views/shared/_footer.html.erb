@@ -71,28 +71,12 @@
     <!--/.footer-->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class = "search">
+       <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+        <%= search_field_tag :search, params[:search], placeholder: "Search" %>
+        <%= submit_tag "Search" %>
+        <% end %>
+    +</div>
 
     <div class="footer-bottom">
         <div class="container">
