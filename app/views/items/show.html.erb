@@ -24,9 +24,11 @@
       <%= link_to "Next", item_path(@item.id + 1) %>
     <% end %>
   </div>
+
+  <div class="atc_button"><p class="atc"><%= link_to 'Add to cart', shopping_cart_items_path(item_id: @item.id, quantity: 1), method: :post  %></p></div>
+</div>
 </div>
 </center>
-
 <div class="cart-pos-show">
 <%= render 'shared/cart' %>
 
