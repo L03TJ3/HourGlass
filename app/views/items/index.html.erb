@@ -20,13 +20,12 @@ YOU NEED AN HOURGLASS. <i>TODAY</i>
         <div class="tag">Price:  $<%= item.price %></div>
         <div class="tag">Quantity:  <%= item.quantity %></div>
         <div class="atc_button"><p class="atc"><%= link_to 'Add to cart', shopping_cart_items_path(item_id: item.id, quantity: 1), method: :post  %></p></div>
+      </div>
     </li>
-  </div>
-
 
   <% end %>
   </ul>
   <!-- <%= link_to 'New Item', new_item_path %> -->
 </div>
-
+<div class='spacing'></div>
 <%= render 'shared/cart' %>
