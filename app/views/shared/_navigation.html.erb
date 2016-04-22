@@ -8,6 +8,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <div class = "search">
+             <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+              <%= search_field_tag :search, params[:search], placeholder: "Search" %>
+             <%= submit_tag "Search" %>
+              <% end %>
+          </div>
       <%= image_tag("", :class => "logo") %>
       <!-- <%= link_to "Tree Huggers", root_path , class: "navbar-brand" %> -->
     </div>
