@@ -15,20 +15,7 @@
   <h4>(Click on a picture to go to a products page) </h4>
 </div>
   <ul class="bxslider">
-  <% @items.each do |item| %>
-
-
-    <li>
-      <%= link_to image_tag(item.image, class: "index-img"), item_path(item.id) %>
-      <div class="test">
-        <div class="tag">Name:  <%= item.name %></div>
-        <div class="tag">Price:  $<%= item.price %></div>
-        <div class="tag">Quantity:  <%= item.quantity %></div>
-        <div class="atc_button"><p class="atc"><%= link_to 'Add to cart', shopping_cart_items_path(item_id: item.id, quantity: 1), method: :post  %></p></div>
-      </div>
-    </li>
-
-  <% end %>
+    <%= render @items %>
   </ul>
   <!-- <%= link_to 'New Item', new_item_path %> -->
 </div>

@@ -1,3 +1,14 @@
-<form>
-		<%= search_field_tag "q" type: search:, params [:q], placeholder: "search...", name: %>
-	</form>
+<div class="container">
+  <h1>Search Results</h1>
+
+  <p>all of your results </p>
+
+
+  <% if @items.count > 0 %>
+    <ul class="bxslider">
+      <%= render @items %>
+    </ul>
+  <% else %>
+    <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+  <% end %>
+</div>
