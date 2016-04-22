@@ -1,5 +1,6 @@
 /* Size & position */
 .new_user {
+     text-align:center;
      font-family: 'Brandon Grotesque';
      font-weight: 400;
      /* Size and position */
@@ -21,9 +22,14 @@
 
 .field {
 
+.buttonlogin{
+  text-align: center;
+}
 
 }
 
 .button {
 
+ position:relative;
+ left:45%;
 }
