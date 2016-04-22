@@ -16,13 +16,16 @@
         <%= quantity %><br />
         $<%= item.price %>
         <br />
-          <%= link_to 'Remove from cart', shopping_cart_item_path(item.id), method: :delete %>
+          <p class="remove-button">
+            <%= link_to 'X', shopping_cart_item_path(item.id), method: :delete, class: "remove" %>
+          </p>
       <br />
       </p>
     </div>
     <% end %>
+    <br />
     <% if session[:shopping_cart].length > 1 %>
-     <%= link_to 'Empty cart', empty_cart_path(1), method: :delete %>
+     <%= link_to 'Empty cart', empty_cart_path(1), method: :delete, class: "empty" %>
    <% end %>
   <% end %>
 
