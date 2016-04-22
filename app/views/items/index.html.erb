@@ -8,16 +8,11 @@
 <div class="container-fluid index">
 
 <div class="welcome">
-  <h2 class="wel-head">
-    Welcome to Hourify <br  />
-    Below you can find our products
-  </h2>
-  <h4>(Click on a picture to go to a products page) </h4>
+YOU NEED AN HOURGLASS. <i>TODAY</i>
 </div>
+
   <ul class="bxslider">
   <% @items.each do |item| %>
-
-
     <li>
       <%= link_to image_tag(item.image, class: "index-img"), item_path(item.id) %>
       <div class="test">
@@ -32,7 +27,5 @@
   </ul>
   <!-- <%= link_to 'New Item', new_item_path %> -->
 </div>
-
-
-
+<div class='spacing'></div>
 <%= render 'shared/cart' %>
