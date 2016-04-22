@@ -9,10 +9,14 @@
     <p class="cart-item">
       <% item = Item.find(item_id.to_i) %>
       <%= image_tag(item.image, class: "cart-img") %>
-      <%= item.name %>
-      <%= quantity %>
+      <p class="cart-item-desc">
+
+      <%= item.name %> |
+      <%= quantity %><br />
       $<%= item.price %>
       <br />
+
+    </p>
 
       <%= link_to 'Remove from cart', shopping_cart_item_path(item.id), method: :delete %>
       <br />
