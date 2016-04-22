@@ -11,6 +11,19 @@
 <br>
 <strong>PRICE:</strong>
   <i><%= @item.price %></i>
+  <br /> <br />
+
+  <div id="previous-item">
+    <% if @item.id != Item.first[:id] %>
+      <%= link_to "Prev", item_path(@item.id - 1) %>
+    <% end %>
+  </div>
+
+  <div id="next-item">
+    <% if @item.id != Item.last[:id] %>
+      <%= link_to "Next", item_path(@item.id + 1) %>
+    <% end %>
+  </div>
 </div>
 </center>
 
