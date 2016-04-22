@@ -1,3 +1,4 @@
+
 <center>
    <%= image_tag(@item.image, class:"imgitem")%>
 
@@ -12,6 +13,11 @@
   <i><%= @item.price %></i>
 </div>
 </center>
+
+<div class="cart-pos-show">
+<%= render 'shared/cart' %>
+
+</div>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
