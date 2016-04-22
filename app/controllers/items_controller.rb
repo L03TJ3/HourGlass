@@ -7,10 +7,12 @@ class ItemsController < ApplicationController
     @items = Item.all
     @shopping_cart_items = session[:shopping_cart]
 
-  #   if params [:q].present?
-	# @items = @items.where('title ILIKE ?' , " %#{params[:q]}% " )
-  # end
-  end
+    if params[:search]
+          @items = Item.search(params[:search])
+          render :search
+        else
+          @items = Item.all.order('created_at DESC')
+        end
 
   # GET /items/1
   # GET /items/1.json
