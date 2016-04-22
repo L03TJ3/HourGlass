@@ -3,20 +3,24 @@
 </div>
 <div class="cart-content">
 <!--  <%= session[:shopping_cart] %> -->
-
+  <p class="cart-title"> Shopping cart Overview</p>
   <% if session[:shopping_cart] != nil %>
     <% session[:shopping_cart].each do |item_id, quantity| %>
-
+    <p class="cart-item">
       <% item = Item.find(item_id.to_i) %>
+      <%= image_tag(item.image, class: "cart-img") %>
       <%= item.name %>
       <%= quantity %>
-      <%= item.price %>
+      $<%= item.price %>
       <br />
 
       <%= link_to 'Remove from cart', shopping_cart_item_path(item.id), method: :delete %>
       <br />
+      </p>
     <% end %>
-    <%= link_to 'Empty cart', empty_cart_path(1), method: :delete %>
+    <% if session[:shopping_cart].length > 1 %>
+     <%= link_to 'Empty cart', empty_cart_path(1), method: :delete %>
+   <% end %>
   <% end %>
 
 </div>
