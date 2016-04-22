@@ -33,24 +33,6 @@
   <!-- <%= link_to 'New Item', new_item_path %> -->
 </div>
 
-<div class="trigger">
-  <img src="http://666marine.com/Shopping_Cart_Logo_op_800x571.png" />
-</div>
 
-<div class="cart-content">
-<!--  <%= session[:shopping_cart] %> -->
 
-  <% if session[:shopping_cart] != nil %>
-    <% session[:shopping_cart].each do |item_id, quantity| %>
-      <% item = Item.find(item_id.to_i) %>
-      <%= item.name %>
-      <%= quantity %>
-      <%= item.price %>
-      <br />
-
-      <%= link_to 'Remove from cart', shopping_cart_item_path(item.id), method: :delete %>
-      <br />
-    <% end %>
-    <%= link_to 'Empty cart', empty_cart_path(1), method: :delete %>
-  <% end %>
-</div>
+<%= render 'shared/cart' %>
