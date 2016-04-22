@@ -8,7 +8,9 @@ class ItemsController < ApplicationController
     @shopping_cart_items = session[:shopping_cart]
 
     if params[:search]
-        @items = Item.search(params[:search]).order("created_at DESC")
+        @items = Item.find(params[:search])
+        redirect_to 
+
       else
         @items = Item.all.order('created_at DESC')
       end
